@@ -33,7 +33,7 @@ const Navbar = () => {
         <ul className="relative md:font-semibold font-medium text-sm md:text-lg py-1 px-7 rounded-md items-center flex gap-6 md:gap-10">
           <li className="md:mr-2 ">
             <h1 className="w-full text-xl font-bold text-[#00df9a]">
-              <Link to="/">FoodShop</Link>
+              <Link to="/">Khawa-Dawa</Link>
             </h1>
           </li>
           <li className="md:flex hidden gap-6">
@@ -81,7 +81,7 @@ const Navbar = () => {
           >
             <div className="md:mr-2 ">
               <h1 className="w-full text-xl font-bold text-[#00df9a]">
-                <Link to="/">FoodShop</Link>
+                <Link to="/">Khawa-Dawa</Link>
               </h1>
             </div>
             <div>
