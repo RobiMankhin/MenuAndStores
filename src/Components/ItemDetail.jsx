@@ -21,7 +21,7 @@ const ItemDetail = () => {
   console.log("item :", item);
   const activeItem = cartitem || item;
 
-  // Ensure item is defined and has necessary properties
+  // Ensuring item is defined and has necessary properties
   const imageURL = activeItem?.imgdata || img;
 
   const handleDecreaseQnty = () => {
@@ -51,7 +51,19 @@ const ItemDetail = () => {
   }
 
   if (!cartitem) {
-    return <p>Item not found in cart</p>; // Handling case where item is not in the cart
+    return (
+      <div className="flex flex-col items-center gap-5  mt-10">
+        <p className="text-3xl text-red-700 font-bold">
+          Item not found in cart ...
+        </p>
+        <button
+          onClick={() => navigate("/menu")}
+          className=" font-semibold py-1 border border-gray-800 px-2 rounded-md hover:bg-green-600 hover:text-gray-100 bg-green-500"
+        >
+          Back to Menu
+        </button>
+      </div>
+    ); // Handling case where item is not in the cart
   }
 
   return (
@@ -65,7 +77,7 @@ const ItemDetail = () => {
             className="rounded-lg"
             style={{ width: "240px", height: "200px" }}
             src={imageURL}
-            alt={item.name || "Item image"} // Use a more descriptive alt text
+            alt={item.name || "Item image"} // Using a more descriptive alt text
           />
         </div>
         <div>

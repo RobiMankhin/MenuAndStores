@@ -49,26 +49,28 @@ const menuSlice = createSlice({
     },
     increaseQnty: (state, action) => {
       const cartitem = state.cart.find((e) => e.id == action.payload.id);
-      cartitem.qnty += 1;
-      state.totalAmount += cartitem.price;
+      if (cartitem) {
+        cartitem.qnty += 1;
+        state.totalAmount += cartitem.price;
+      }
     },
     decreaseQnty: (state, action) => {
       const cartitemindex = state.cart.findIndex(
         (e) => e.id == action.payload.id
       );
       const cartitem = state.cart.find((e) => e.id == action.payload.id);
-      if (cartitem) {
+      if (cartitem && cartitem.qnty > 1) {
         cartitem.qnty -= 1;
         state.totalAmount -= cartitem.price;
-      }
-      if (cartitem.qnty <= 0) {
+      } else {
         state.cart.splice(cartitemindex, 1);
+        state.totalAmount -= cartitem.price;
         //or
         // state.cart.filter((e) => e.id !== action.payload.id);
       }
     },
   },
-  extraReducers: () => {},
+  // extraReducers: () => {},
 });
 export const {
   addToCart,

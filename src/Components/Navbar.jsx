@@ -75,7 +75,7 @@ const Navbar = () => {
             )}
           </div>
           <div
-            className={`md:hidden fixed flex flex-col gap-4 p-3 top-0 left-0 bg-teal-800 border-r-gray-600 border-r h-screen bg w-[55%] ${
+            className={`md:hidden z-50 fixed flex flex-col gap-4 p-3 top-0 left-0 bg-teal-800 border-r-gray-600 border-r h-screen w-[55%] ${
               opentab ? "translate-x-0" : "translate-x-[-100%]"
             } ease-in-out duration-300`}
           >

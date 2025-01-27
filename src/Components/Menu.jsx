@@ -9,7 +9,7 @@ const Menu = () => {
 
   const add = (item) => {
     dispatch(addToCart(item));
-    dispatch(addToCart(item));
+
     console.log("Item added to cart:", item);
   };
 
